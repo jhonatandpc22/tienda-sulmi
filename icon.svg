@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0f172a"/>
+  
+  <text x="256" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="bold" fill="#64748b" text-anchor="middle" letter-spacing="3">BODEGA</text>
+  
+  <g transform="translate(0, 20)">
+    <rect x="136" y="190" width="240" height="150" rx="12" fill="#4f46e5"/>
+    <rect x="166" y="220" width="180" height="120" rx="8" fill="#1e293b"/>
+    
+    <path d="M216 260 h80 l-10 45 h-60 z" fill="#10b981"/>
+    <path d="M236 260 v-15 a20 20 0 0 1 40 0 v15" fill="none" stroke="#10b981" stroke-width="8" stroke-linecap="round"/>
+    <path d="M243 282 l8 8 l16 -16" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <path d="M106 190 L156 120 h200 l50 70 z" fill="#6366f1"/>
+    <path d="M156 120 l25 70 h-75 z" fill="#818cf8"/>
+    <path d="M206 120 l25 70 h-50 z" fill="#818cf8"/>
+    <path d="M256 120 l25 70 h-50 z" fill="#818cf8"/>
+    <path d="M306 120 l25 70 h-50 z" fill="#818cf8"/>
+    <path d="M356 120 l50 70 h-75 z" fill="#818cf8"/>
+    
+    <circle cx="131" cy="190" r="25" fill="#818cf8"/>
+    <circle cx="181" cy="190" r="25" fill="#6366f1"/>
+    <circle cx="231" cy="190" r="25" fill="#818cf8"/>
+    <circle cx="281" cy="190" r="25" fill="#6366f1"/>
+    <circle cx="331" cy="190" r="25" fill="#818cf8"/>
+    <circle cx="381" cy="190" r="25" fill="#6366f1"/>
+  </g>
+  
+  <text x="256" y="440" font-family="system-ui, -apple-system, sans-serif" font-size="46" font-weight="bold" fill="#f8fafc" text-anchor="middle">CajaPOS</text>
+</svg>
