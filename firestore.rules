@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Sulmi conserva su acceso anónimo compartido y sus colecciones originales.
+    // No es el esquema de usuarios/roles de Papa Dorada.
+    function shopCollection(name) {
+      return name in ['pos_inventory', 'pos_sales', 'pos_gastos', 'pos_fiados', 'pos_config'];
+    }
+    match /{collection}/{id} {
+      allow read, write: if request.auth != null && shopCollection(collection);
+    }
+    match /artifacts/{app}/users/{uid}/{collection}/{id} {
+      allow read, write: if request.auth != null && request.auth.uid == uid && shopCollection(collection);
+    }
+  }
+}

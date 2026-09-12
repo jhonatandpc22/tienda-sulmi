@@ -1,5 +1,5 @@
-const CACHE_NAME = 'sulmi-v-ca398f9b167a6e';
-const ASSETS = ["./index.html","./manifest.json","./icon.svg","./assets/LUCIDE-LICENSE.txt","./assets/business-support.js","./assets/lucide.min.js","./assets/styles.css","./assets/sulmi-sync.js"];
+const CACHE_NAME = 'sulmi-v-__VERSION__';
+const ASSETS = __ASSETS__;
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });

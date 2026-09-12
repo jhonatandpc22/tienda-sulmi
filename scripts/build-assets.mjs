@@ -1,0 +1,13 @@
+import { mkdir, cp, copyFile, readFile, writeFile, readdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+await mkdir('assets', { recursive: true });
+await copyFile('node_modules/lucide/dist/umd/lucide.min.js', 'assets/lucide.min.js');
+await copyFile('node_modules/lucide/LICENSE', 'assets/LUCIDE-LICENSE.txt');
+const files = ['index.html', 'manifest.json', 'icon.svg', ...(await readdir('assets')).filter(n => !n.endsWith('.input.css')).map(n => `assets/${n}`)];
+const hash = createHash('sha256');
+for (const path of files) hash.update(await readFile(path));
+const sw = (await readFile('scripts/sw-template.js', 'utf8')).replace('__VERSION__', hash.digest('hex').slice(0, 14)).replace('__ASSETS__', JSON.stringify(files.map(n => `./${n}`)));
+await writeFile('sw.js', sw);
+await mkdir('dist', { recursive: true });
+for (const path of [...files, 'sw.js']) await cp(path, `dist/${path}`, { recursive: true });
+console.log(`Sitio compilado: ${files.length} recursos locales, caché versionada.`);

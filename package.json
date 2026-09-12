@@ -1,0 +1,22 @@
+{
+  "name": "tienda-sulmi-pos",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -c tailwind.config.cjs -i assets/styles.input.css -o assets/styles.css --minify && node scripts/build-assets.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test:firebase": "node scripts/test-emulators.mjs",
+    "benchmark": "node scripts/benchmark-render.mjs"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "6.2.5",
+    "firebase": "11.6.1",
+    "jsdom": "26.1.0",
+    "lucide": "0.468.0",
+    "tailwindcss": "3.4.17"
+  }
+}
